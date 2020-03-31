@@ -1,0 +1,31 @@
+head
+  title Login Here
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+.page-header
+  h1 Simple Auth-System
+nav.navbar.navbar-default
+  .container-fluid
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li
+          a(href='/') Home
+        li
+          a(href='/') Sign Up
+        li
+          a(href='/dashboard') Dashboard
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='/login') Log In
+        li
+          a(href='/logout') Log Out
+.container.row
+
+  h1 Hi, Welcome to your Dashboard1
+  ul
+    each ps in products
+      .row
+        .col-lg-12(style='border:1px solid black')
+          p= ps.name
+          img(style='height:50px' src=ps.img)
+          p= ps.description
+          a(href='/cart/add/'+ps.id) add cart
